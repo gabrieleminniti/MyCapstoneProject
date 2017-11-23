@@ -8,6 +8,5 @@ simplejson
 keras
 numpy
 PIL
-skimage
 cv2
 tensorflow

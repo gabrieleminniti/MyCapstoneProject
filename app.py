@@ -4,7 +4,6 @@ import keras
 from keras.models import load_model
 import numpy as np
 from PIL import ImageGrab, Image
-from skimage import io
 import cv2
 
 

@@ -9,6 +9,5 @@ keras
 numpy
 PIL
 skimage
-sklearn
 cv2
 tensorflow

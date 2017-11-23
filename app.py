@@ -2,11 +2,8 @@ from flask import Flask,render_template,request
 import tensorflow
 import keras
 from keras.models import load_model
-import os
 import numpy as np
 from PIL import ImageGrab, Image
-import sklearn
-import skimage
 from skimage import io
 import cv2
 

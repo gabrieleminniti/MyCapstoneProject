@@ -1,4 +1,5 @@
 from flask import Flask,render_template,request
+import tensorflow
 import keras
 from keras.models import load_model
 import os
@@ -20,10 +21,10 @@ def index():
         half_the_width = immagine.size[0] / 2
         half_the_height = immagine.size[1] / 2
         img4 = immagine.crop(
-                (half_the_width - 1280,
-                half_the_height - 500,
-                half_the_width + 440,
-                half_the_height + 290)
+                (half_the_width - 790,
+                half_the_height - 450,
+                half_the_width + 790,
+                half_the_height + 450)
                 )
         img_loaded = np.array(img4)
         resized = cv2.resize(img_loaded, (256, 256))
@@ -31,6 +32,8 @@ def index():
         green = resized[:, :, 1]
         red = resized[:, : , 2]
         immagine = cv2.merge((blue, green, red))
+        da_plot = Image.fromarray(immagine, 'RGB')
+        da_plot.show()
         x = immagine.reshape((1, ) + immagine.shape)
         softmax = load_model('ULTIMO_MODELLO_V3.h5')
         softmax.load_weights('ULTIMO_MODELLO_V3_pesi.h5')

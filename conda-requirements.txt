@@ -5,3 +5,11 @@ flask
 jinja2
 pip
 simplejson
+os
+keras
+numpy
+PIL
+skimage
+sklearn
+cv2
+tensorflow

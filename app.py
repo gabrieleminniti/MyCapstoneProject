@@ -2,13 +2,15 @@ from flask import Flask,render_template,request
 
 
 app = Flask(__name__)
+
 @app.route('/',methods=['GET','POST'])
 def index():
-    if request.method == 'GET':
-        return render_template('index.html')
+    if request.method == 'POST':
+        return 'thermoboll! porco modno!'
     else:
-        return ( 'noooooo')
-
+        #request.method == 'GET':
+        
+        return render_template('index.html')
 
 
 if __name__ == "__main__":

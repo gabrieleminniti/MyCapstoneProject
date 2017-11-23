@@ -10,7 +10,6 @@ import cv2
 app = Flask(__name__)
 
 @app.route('/',methods=['GET','POST'])
-
 def index():
     if request.method == 'POST':
         immagine = ImageGrab.grab()
@@ -41,7 +40,6 @@ def index():
         elif previsione[0,2] > .3:
             return 'si tratta di: Thermoball '
     else:
-        
         #request.method == 'GET':
         return render_template('index.html')
 

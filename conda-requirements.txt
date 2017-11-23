@@ -8,5 +8,5 @@ simplejson
 keras
 numpy
 PIL
-cv2
+opencv
 tensorflow

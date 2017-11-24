@@ -27,8 +27,8 @@ def index():
         green = resized[:, :, 1]
         red = resized[:, : , 2]
         immagine = cv2.merge((blue, green, red))
-        da_plot = Image.fromarray(immagine, 'RGB')
-        da_plot.show()
+        #da_plot = Image.fromarray(immagine, 'RGB')
+        #da_plot.show()
         x = immagine.reshape((1, ) + immagine.shape)
         softmax = load_model('ULTIMO_MODELLO_V3.h5')
         #softmax.load_weights('ULTIMO_MODELLO_V3_pesi.h5')

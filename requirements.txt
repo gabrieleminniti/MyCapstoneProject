@@ -4,7 +4,5 @@ keras
 numpy
 simplejson
 flask
-jinja2
 pip
 tensorflow
-PIL

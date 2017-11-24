@@ -6,4 +6,4 @@ simplejson
 flask
 jinja2
 pip
-
+tensorflow

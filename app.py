@@ -27,7 +27,7 @@ def index():
         green = resized[:, :, 1]
         red = resized[:, : , 2]
         immagine_2 = cv2.merge((blue, green, red))
-        x = immagine_2.reshape((1, ) + immagine.shape)
+        x = immagine_2.reshape((1, ) + immagine_2.shape)
         softmax = load_model('ULTIMO_MODELLO_V3.h5')
         softmax.load_weights('ULTIMO_MODELLO_V3_pesi.h5')
         previsione = softmax.predict(x)

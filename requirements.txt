@@ -2,12 +2,11 @@ gunicorn==19.3.0
 requests==2.9.1
 keras
 numpy
-cv2
 pil
 simplejson
-flask==0.12.2
+flask
 jinja2
 pip
 h5py
-
+cv2
 

@@ -6,4 +6,4 @@ simplejson
 flask
 pip
 tensorflow
-from PIL import ImageGrab
+PIL

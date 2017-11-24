@@ -2,7 +2,8 @@ from flask import Flask,render_template,request
 import keras
 from keras.models import load_model
 import numpy as np
-from PIL import ImageGrab, Image
+from PIL import Image
+from PIL import ImageGrab
 import cv2
 
 

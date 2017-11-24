@@ -7,3 +7,4 @@ flask
 pip
 tensorflow
 pyscreenshot
+os

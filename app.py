@@ -1,6 +1,4 @@
 from flask import Flask,render_template,request
-import tensorflow
-import keras
 from keras.models import load_model
 import numpy as np
 from PIL import ImageGrab, Image
@@ -31,7 +29,7 @@ def index():
         da_plot.show()
         x = immagine.reshape((1, ) + immagine.shape)
         softmax = load_model('ULTIMO_MODELLO_V3.h5')
-        softmax.load_weights('ULTIMO_MODELLO_V3_pesi.h5')
+        #softmax.load_weights('ULTIMO_MODELLO_V3_pesi.h5')
         previsione = softmax.predict(x)
         if previsione[0,0] > .3:
             return ' si tratta di: Borealis '

@@ -1,8 +1,0 @@
-flask
-jinja2
-pip
-simplejson
-keras
-numpy
-PIL
-opencv

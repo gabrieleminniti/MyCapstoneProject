@@ -32,11 +32,12 @@ def index():
         softmax.load_weights('ULTIMO_MODELLO_V3_pesi.h5')
         previsione = softmax.predict(x)
         if previsione[0,0] > .3:
-            return ' si tratta di: Borealis '
+            risultato =  'si tratta di: Borealis '
         elif previsione[0,1] >.3:
-            return 'si tratta di Duffel '
+            ritultato =  'si tratta di Duffel '
         elif previsione[0,2] > .3:
-            return 'si tratta di: Thermoball '
+            risultato ='si tratta di: Thermoball '
+        return render_template('index.html', val = risultato)
     else:
         #request.method == 'GET':
         return render_template('index.html')

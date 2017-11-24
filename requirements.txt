@@ -1,11 +1,13 @@
 gunicorn==19.3.0
 requests==2.9.1
-keras==2.0.8
-numpy==1.13.3
-cv2==2.4.11
-pil==1.1.7
-simplejson==2.0.9
+keras
+numpy
+cv2
+pil
+simplejson
 flask==0.12.2
-jinja2==2.9.6
-pip==9.0.1
+jinja2
+pip
+h5py
+
 

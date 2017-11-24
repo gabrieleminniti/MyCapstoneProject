@@ -1,4 +1,3 @@
 opencv
 PIL
 jinja2
-os

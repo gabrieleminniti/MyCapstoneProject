@@ -7,6 +7,7 @@ flask
 pip
 tensorflow
 pyscreenshot
+macOS
 pyobjc
 pyobjc-core
 

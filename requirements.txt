@@ -7,9 +7,7 @@ flask
 pip
 tensorflow
 pyscreenshot
-macOS
-pyobjc
-pyobjc-core
+
 
 pyautogui
 MarkupSafe==0.18

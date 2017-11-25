@@ -1,3 +1,5 @@
 opencv
 PIL
 jinja2
+pyobjc
+pyobjc-core

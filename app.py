@@ -7,15 +7,14 @@ from PIL import Image
 import cv2
 import os
 import PIL
-import pyautogui
-
+import pyscreeze
 
 app = Flask(__name__)
 
 @app.route('/',methods=['GET','POST'])
 def index():
     if request.method == 'POST':
-        screen =pyautogui.screenshot()
+        screen =pyscreeze.screenshot()
         half_the_width = screen.size[0] / 2
         half_the_height = screen.size[1] / 2
         img4 = screen.crop(

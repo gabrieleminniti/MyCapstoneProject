@@ -2,8 +2,8 @@ from flask import Flask,render_template,request
 import keras
 from keras.models import load_model
 import numpy as np
-from PIL import Image
-import pyscreenshot as iom
+from PIL import Image, ImageGrab
+import pyscreenshot
 import cv2
 import os
 import PIL
@@ -14,20 +14,15 @@ app = Flask(__name__)
 @app.route('/',methods=['GET','POST'])
 def index():
     if request.method == 'POST':
-        immagine = iom.grab()
-        if cv2.imwrite('messigray.png',immagine):
-            risultato = 'bella'
-        else:
-            risultato = 'nha '
-        
-        #half_the_width = immagine.size[0] / 2
-        #half_the_height = immagine.size[1] / 2
-            #img4 = immagine.crop(
-            #   (half_the_width - 790,
-            #    half_the_height - 450,
-            #    half_the_width + 790,
-            #    half_the_height + 450)
-            #    )
+        screen = ImageGrab.grab()
+        half_the_width = screen.size[0] / 2
+        half_the_height = screen.size[1] / 2
+        img4 = screen.crop(
+              (half_the_width - 790,
+                half_the_height - 450,
+                half_the_width + 790,
+                half_the_height + 450)
+                )
             #img_loaded = np.array(img4)
             #resized = cv2.resize(img_loaded, (256, 256))
             #blue = resized[:,:,0]
@@ -44,7 +39,7 @@ def index():
         #    ritultato =  'si tratta di Duffel '
         #elif previsione[0,2] > .3:
         #   risultato ='si tratta di: Thermoball '
-        #risultato = immagine.size
+        risultato = img4.size
         
         return render_template('index.html', val = risultato)
     else:

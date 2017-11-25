@@ -15,10 +15,11 @@ app = Flask(__name__)
 def index():
     if request.method == 'POST':
         immagine = iom.grab()
-        if type(immagine) == PIL.PngImagePlugin.PngImageFile:
-            risultato = ' andata bene'
+        if cv2.imwrite('messigray.png',immagine):
+            risultato = 'bella'
         else:
-            risultato = 'non  bene'
+            risultato = 'nha '
+        
         #half_the_width = immagine.size[0] / 2
         #half_the_height = immagine.size[1] / 2
             #img4 = immagine.crop(
@@ -44,6 +45,7 @@ def index():
         #elif previsione[0,2] > .3:
         #   risultato ='si tratta di: Thermoball '
         #risultato = immagine.size
+        
         return render_template('index.html', val = risultato)
     else:
         #request.method == 'GET':

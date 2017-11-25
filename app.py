@@ -16,9 +16,9 @@ def index():
     if request.method == 'POST':
         immagine = ImageGrab.grab()
         if type(immagine) == PIL.PngImagePlugin.PngImageFile:
-            risultato = ' è andata bene'
+            risultato = ' andata bene'
         else:
-            risultato = 'non così bene'
+            risultato = 'non  bene'
         #half_the_width = immagine.size[0] / 2
         #half_the_height = immagine.size[1] / 2
             #img4 = immagine.crop(

@@ -6,6 +6,7 @@ from PIL import Image
 import pyscreenshot as ImageGrab
 import cv2
 import os
+import PIL
 
 
 app = Flask(__name__)
@@ -13,7 +14,11 @@ app = Flask(__name__)
 @app.route('/',methods=['GET','POST'])
 def index():
     if request.method == 'POST':
-        #immagine = ImageGrab.grab()
+        immagine = ImageGrab.grab()
+        if type(immagine) == PIL.PngImagePlugin.PngImageFile:
+            risultato = ' è andata bene'
+        else:
+            risultato = 'non così bene'
         #half_the_width = immagine.size[0] / 2
         #half_the_height = immagine.size[1] / 2
             #img4 = immagine.crop(
@@ -38,7 +43,7 @@ def index():
         #    ritultato =  'si tratta di Duffel '
         #elif previsione[0,2] > .3:
         #   risultato ='si tratta di: Thermoball '
-        risultato = 'immagine prova '#immagine.size
+        #risultato = immagine.size
         return render_template('index.html', val = risultato)
     else:
         #request.method == 'GET':

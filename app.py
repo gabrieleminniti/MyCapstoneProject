@@ -2,11 +2,11 @@ from flask import Flask,render_template,request
 import keras
 from keras.models import load_model
 import numpy as np
-from PIL import Image
+#from PIL import Image
 import pyscreenshot as prendistacazzodiimmagine
 import cv2
 import os
-import PIL
+#import PIL
 
 
 app = Flask(__name__)

@@ -3,7 +3,7 @@ import keras
 from keras.models import load_model
 import numpy as np
 from PIL import Image
-import pyscreenshot as ImageGrab
+import pyscreenshot as prendistacazzodiimmagine
 import cv2
 import os
 import PIL
@@ -14,7 +14,7 @@ app = Flask(__name__)
 @app.route('/',methods=['GET','POST'])
 def index():
     if request.method == 'POST':
-        screen =ImageGrab.grab(bbox=(10,10,510,510))
+        screen =prendistacazzodiimmagine.grab(bbox=(10,10,510,510))
         half_the_width = screen.size[0] / 2
         half_the_height = screen.size[1] / 2
         img4 = screen.crop(

@@ -13,9 +13,9 @@ app = Flask(__name__)
 @app.route('/',methods=['GET','POST'])
 def index():
     if request.method == 'POST':
-        immagine = ImageGrab.grab()
-        half_the_width = immagine.size[0] / 2
-        half_the_height = immagine.size[1] / 2
+        #immagine = ImageGrab.grab()
+        #half_the_width = immagine.size[0] / 2
+        #half_the_height = immagine.size[1] / 2
             #img4 = immagine.crop(
             #   (half_the_width - 790,
             #    half_the_height - 450,
@@ -38,7 +38,7 @@ def index():
         #    ritultato =  'si tratta di Duffel '
         #elif previsione[0,2] > .3:
         #   risultato ='si tratta di: Thermoball '
-        risultato = immagine.size
+        risultato = 'immagine prova '#immagine.size
         return render_template('index.html', val = risultato)
     else:
         #request.method == 'GET':

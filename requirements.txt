@@ -7,8 +7,9 @@ flask
 pip
 tensorflow
 pyscreenshot
-pyobjc-core
 pyobjc
+pyobjc-core
+
 pyautogui
 MarkupSafe==0.18
 Werkzeug==0.9.4

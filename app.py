@@ -3,7 +3,7 @@ import keras
 from keras.models import load_model
 import numpy as np
 from PIL import Image
-import pyscreenshot as ImageGrab
+import pyscreenshot as iom
 import cv2
 import os
 import PIL
@@ -14,7 +14,7 @@ app = Flask(__name__)
 @app.route('/',methods=['GET','POST'])
 def index():
     if request.method == 'POST':
-        immagine = ImageGrab.grab()
+        immagine = iom.grab()
         if type(immagine) == PIL.PngImagePlugin.PngImageFile:
             risultato = ' andata bene'
         else:

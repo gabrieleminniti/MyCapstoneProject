@@ -3,7 +3,7 @@ import keras
 from keras.models import load_model
 import numpy as np
 import cv2
-#from PIL import ImageGrab
+from PIL import Image
 
 app = Flask(__name__)
 
@@ -14,7 +14,11 @@ def index():
     if request.method == 'POST':
         softmax = load_model('ULTIMO_MODELLO_V3.h5')
         #img = ImageGrab.grab()
-        ritorno = 7
+        img = cv2.imread('test.png',3)
+        resized = cv2.resize(img, (256, 256))
+        resized_2 = resized.reshape((1,) + resized.shape)
+        ris = softmax.predict(resized_2)
+        ritorno = ris
         return render_template('index.html', val = ritorno)
     else:
         #request.method == 'GET':

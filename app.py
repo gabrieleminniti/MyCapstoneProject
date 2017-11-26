@@ -3,7 +3,7 @@ import keras
 from keras.models import load_model
 import numpy as np
 import cv2
-from PIL import ImageGrab
+#from PIL import ImageGrab
 
 app = Flask(__name__)
 

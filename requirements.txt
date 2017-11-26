@@ -7,5 +7,4 @@ flask
 pip
 tensorflow
 h5py
-Xlib
-pyautogui
+pyscreenshot 

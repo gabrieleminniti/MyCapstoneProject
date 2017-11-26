@@ -7,14 +7,14 @@ from PIL import Image
 import cv2
 import os
 import PIL
-import pyscreeze
+import pyscreenshot
 
 app = Flask(__name__)
 
 @app.route('/',methods=['GET','POST'])
 def index():
     if request.method == 'POST':
-        screen =pyscreeze.screenshot()
+        screen =pyscreenshot.screenshot()
         half_the_width = screen.size[0] / 2
         half_the_height = screen.size[1] / 2
         img4 = screen.crop(

@@ -6,7 +6,7 @@ simplejson
 flask
 pip
 tensorflow
-pyscreeze
+image
 pyscreenshot
 
 

@@ -5,8 +5,7 @@ import numpy as np
 from PIL import Image
 import cv2
 import os
-import PIL
-from PIL import ImageGrab
+import pyscreen as ImgaGrab
 
 app = Flask(__name__)
 

@@ -6,7 +6,7 @@ from PIL import Image
 import cv2
 import os
 import PIL
-import pyscreenshot as ImageGrab
+import pyscreenshot
 
 app = Flask(__name__)
 
@@ -14,7 +14,7 @@ app = Flask(__name__)
 
 def index():
     if request.method == 'POST':
-        screen =ImageGrab.grab()
+        screen =pyscreenshot.grab()
         half_the_width = screen.size[0] / 2
         half_the_height = screen.size[1] / 2
         img4 = screen.crop(

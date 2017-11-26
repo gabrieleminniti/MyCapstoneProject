@@ -6,7 +6,6 @@ simplejson
 flask
 pip
 tensorflow
-pyscreenshot
 
 paver
 path.py

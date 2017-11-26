@@ -13,7 +13,7 @@ app = Flask(__name__)
 def index():
     if request.method == 'POST':
         softmax = load_model('ULTIMO_MODELLO_V3.h5')
-        cap = cv2.VideoCapture('Base_camp.mp4')
+        cap = cv2.VideoCapture('base_camp.mp4')
         count = 0
         my_list = []
         while count <10:

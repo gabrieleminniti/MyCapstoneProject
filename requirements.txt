@@ -6,8 +6,6 @@ simplejson
 flask
 pip
 tensorflow
-image
-pyscreenshot
 
 
 

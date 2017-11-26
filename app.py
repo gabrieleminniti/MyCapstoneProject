@@ -2,18 +2,19 @@ from flask import Flask,render_template,request
 import keras
 from keras.models import load_model
 import numpy as np
-from PIL import Image, ImageGrab
+from PIL import Image
 import cv2
 import os
 import PIL
-import pyscreenshot
+import pyscreenshot as ImageGrab
 
 app = Flask(__name__)
 
 @app.route('/',methods=['GET','POST'])
+
 def index():
     if request.method == 'POST':
-        screen =pyscreenshot.screenshot()
+        screen =ImageGrab.grab()
         half_the_width = screen.size[0] / 2
         half_the_height = screen.size[1] / 2
         img4 = screen.crop(

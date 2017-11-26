@@ -6,14 +6,3 @@ simplejson
 flask
 pip
 tensorflow
-
-paver
-path.py
-cogapp==2.3
-sphinx
-
-
-MarkupSafe==0.18
-Werkzeug==0.9.4
-itsdangerous==0.23
-wsgiref==0.1.2

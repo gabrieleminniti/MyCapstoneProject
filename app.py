@@ -3,7 +3,7 @@ import keras
 from keras.models import load_model
 import numpy as np
 import cv2
-
+from PIL import ImagaGrab
 
 app = Flask(__name__)
 
@@ -13,25 +13,9 @@ app = Flask(__name__)
 def index():
     if request.method == 'POST':
         softmax = load_model('ULTIMO_MODELLO_V3.h5')
-        cap = cv2.VideoCapture('base_camp.mp4')
-        count = 0
-        my_list = []
-        while count <10:
-            ret, frame = cap.read()
-            my_list.append( frame)
-            count += 1
-        my_try = []
-        for el in my_list:
-            uno =  cv2.resize(el, (256, 256))
-            due = uno.reshape((1,) + uno.shape)
-            prev = softmax.predict(due)
-            if prev[0,0] > .3:
-                my_try.append('borealis')
-            elif prev[0,1] >.3:
-                my_try.append('duffel')
-            elif prev[0,2] > .3:
-                    my_try.append('thermoball')
-        return render_template('index.html', val = my_try)
+        img = ImagaGrab.grab()
+        ritorno = 7
+        return render_template('index.html', val = ritorno)
     else:
         #request.method == 'GET':
         return render_template('index.html')

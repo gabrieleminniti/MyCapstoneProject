@@ -6,7 +6,12 @@ simplejson
 flask
 pip
 tensorflow
-
+pyscreenshot
+pillow
+paver
+path.py
+cogapp==2.3
+sphinx
 
 
 MarkupSafe==0.18

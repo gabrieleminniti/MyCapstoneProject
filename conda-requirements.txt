@@ -1,3 +1,4 @@
 opencv
 jinja2
 PIL
+pyscreenshot 

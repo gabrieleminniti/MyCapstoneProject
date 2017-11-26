@@ -13,7 +13,7 @@ app = Flask(__name__)
 def index():
     if request.method == 'POST':
         softmax = load_model('ULTIMO_MODELLO_V3.h5')
-        img = ImagaGrab.grab()
+        img = ImageGrab.grab()
         ritorno = 7
         return render_template('index.html', val = ritorno)
     else:

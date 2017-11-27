@@ -15,6 +15,7 @@ app = Flask(__name__)
 def index():
     if request.method == 'POST':
         im=ImageGrab.grab()
+        im.save('screenshot.png')
         softmax = load_model('ULTIMO_MODELLO_V3.h5')
         #img = ImageGrab.grab()
         img = cv2.imread('screenshot.png',3)

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <!-- la funzione è nel body -->
+        <h1>A Web Page</h1>
+        <p id="demo">A Paragraph</p>
+        <button type="button" onclick="myFunction()">Try it</button>
+        
+        <!-- qunado viene cliccato 'try it' dovrebbe fare lo screen del tag dove si trova 
+        <!-- e appiccicarlo al body esattamente come nella pagina di html2canvas -->
+       
+       <!-- ti faccio vedere anche il solito maledetto errore che mi arriva!-->
+        
+       <!-- <script src='static/js/prettify.js'> -->
+       
+            <script type="text/javascript" src="grabzit.min.js"></script>
+            function myFunction() {
+                       <!--<script type="text/javascript"> -->
+            GrabzIt("Sign in to view your Application Key").ConvertURL("http://www.example.com/my-page.html",
+                                                                       {"target": "#features", "bheight": -1, "height": -1, "width": -1}).Create();
+            </script>        </script>
+        
+    </body>
+</html>

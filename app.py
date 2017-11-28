@@ -15,13 +15,13 @@ app = Flask(__name__)
 def index():
     if request.method == 'POST':
         im=ImageGrab.grab()
-        im.save('screenshot.png')
+        im.save('data/screenshot.png')
         softmax = load_model('ULTIMO_MODELLO_V3.h5')
-        #img = ImageGrab.grab()
-        #img = cv2.imread('screenshot.png',3)
-        #resized = cv2.resize(img, (256, 256))
-        #resized_2 = resized.reshape((1,) + resized.shape)
-        #ris = softmax.predict(resized_2)
+        img = ImageGrab.grab()
+        img = cv2.imread('screenshot.png',3)
+        resized = cv2.resize(img, (256, 256))
+        resized_2 = resized.reshape((1,) + resized.shape)
+        ris = softmax.predict(resized_2)
         ritorno = im.size
         return render_template('index.html', val = ritorno)
     else:

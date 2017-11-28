@@ -1,24 +1,34 @@
 <!DOCTYPE html>
 <html>
+    <title> PROVA CON BESTEMMIA </title>
+    <script src="https://apis.google.com/_/scs/apps-static/_/js/k=oz.gapi.it.CY7mlOshbo4.O/m=plusone/rt=j/sv=1/d=1/ed=1/am=AQ/rs=AGLTcCMY0t4zM_F4sC7PvKbfoLAXGP4K_g/cb=gapi.loaded_0" async=""></script>
     <body>
         <!-- la funzione è nel body -->
         <h1>A Web Page</h1>
         <p id="demo">A Paragraph</p>
-        <button type="button" onclick="myFunction()">Try it</button>
-        
-        <!-- qunado viene cliccato 'try it' dovrebbe fare lo screen del tag dove si trova 
-        <!-- e appiccicarlo al body esattamente come nella pagina di html2canvas -->
-       
-       <!-- ti faccio vedere anche il solito maledetto errore che mi arriva!-->
-        
-       <!-- <script src='static/js/prettify.js'> -->
-       
-            <script type="text/javascript" src="grabzit.min.js"></script>
-            function myFunction() {
-                       <!--<script type="text/javascript"> -->
-            GrabzIt("Sign in to view your Application Key").ConvertURL("http://www.example.com/my-page.html",
-                                                                       {"target": "#features", "bheight": -1, "height": -1, "width": -1}).Create();
-            </script>        </script>
+        <button type="button" id="example1">Try it</button>
+        <p>
+            <button class="btn example1">Test on this page</button>
+        </p>
+            <script src="/static/js/html2canvas.js"></script>
+            <script src="/static/js/prettify.js"></script>
+
+            <script>
+                window.prettyPrint();
+                $("#example1").on("click", function(event) {
+                                  event.preventDefault();
+                                  html2canvas(document.body, {
+                                              allowTaint: true,
+                                              taintTest: false,
+                                              onrendered: function(canvas) {
+                                              document.body.appendChild(canvas);
+                                              }
+                                              });
+                                  });
+                                  
+                                  
+            
+            </script>
         
     </body>
 </html>

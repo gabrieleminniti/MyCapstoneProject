@@ -19,17 +19,13 @@ def index():
         softmax.load_weights('ULTIMO_MODELLO_V3_pesi.h5')
         my_path = os.getcwd()
         file_list = [el for el in os.listdir(my_path + '/data/bor_1/') if el[0:5] == 'frame']
-            #for element in file_list:
-            #if element[0:5] != 'frame':
-            #    img = cv2.imread('/data/bor_1/' + element)
-            #   resized = cv2.resize(img, (256, 256))
-            #    resized_2 = resized.reshape((1,) + resized.shape)
-            #    ris = softmax.predict(resized_2)
-            #    my_ris.append(ris)
-            #else:
-            #     pass
-
-        ritorno = file_list
+        for element in file_list:
+            img = cv2.imread(my_path + '/data/bor_1/' + element)
+            resized = cv2.resize(img, (256, 256))
+            resized_2 = resized.reshape((1,) + resized.shape)
+            ris = softmax.predict(resized_2)
+            my_ris.append(ris)
+        ritorno = my_ris
         return render_template('index.html', val = ritorno)
     else:
         #request.method == 'GET':

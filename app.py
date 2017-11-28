@@ -4,6 +4,7 @@ from keras.models import load_model
 import numpy as np
 import cv2
 from PIL import Image
+import os
 
 
 app = Flask(__name__)
@@ -13,24 +14,28 @@ app = Flask(__name__)
 
 def index():
     if request.method == 'POST':
+        my_ris = []
         softmax = load_model('ULTIMO_MODELLO_V3.h5')
         softmax.load_weights('ULTIMO_MODELLO_V3_pesi.h5')
-        img = cv2.imread('data/test.png',3)
-        resized = cv2.resize(img, (256, 256))
-        resized_2 = resized.reshape((1,) + resized.shape)
-        ris = softmax.predict(resized_2)
-        if ris[0,0]>.3:
-            ritorno = 'borealis'
-        elif ris[0,1] > .3:
-            ritorno = 'duffel'
-        elif ris[0,2] >.3:
-            ritorno = 'duffel'
-        else:
-            ritorno = 'no idea'
+        my_path = os.getcwd()
+        file_list = [el for el in os.listdir(my_path + '/data/bor_1/') if el[0:5] == 'frame']
+            #for element in file_list:
+            #if element[0:5] != 'frame':
+            #    img = cv2.imread('/data/bor_1/' + element)
+            #   resized = cv2.resize(img, (256, 256))
+            #    resized_2 = resized.reshape((1,) + resized.shape)
+            #    ris = softmax.predict(resized_2)
+            #    my_ris.append(ris)
+            #else:
+            #     pass
+
+        ritorno = file_list
         return render_template('index.html', val = ritorno)
     else:
         #request.method == 'GET':
         return render_template('index.html')
+
+
 
 
 if __name__ == "__main__":

@@ -9,11 +9,19 @@ import dill
 
 app = Flask(__name__)
 
+app.var = []
 @app.route('/',methods=['GET','POST'])
-
-
 def index():
-    if request.method == 'POST':
+    if request.method == 'GET':
+        return render_template('index.html')
+    else:
+        #request.method == 'POST':
+        a = request.form['class_obj']
+        b = request.form['num_vid']
+        c = request.form['num_frame']
+        app.var.append(a)
+        app.var.append(b)
+        app.var.append(c)
         #my_ris = []
         #softmax = load_model('ULTIMO_MODELLO_V3.h5')
         #softmax.load_weights('ULTIMO_MODELLO_V3_pesi.h5')
@@ -26,11 +34,11 @@ def index():
         #    ris = softmax.predict(resized_2)
         #    my_ris.append(ris)
         nuovo_diz = dill.load(open('primo_dizionario.pkd', 'r'))
-        ritorno = nuovo_diz
+        ritorno = app.var
         return render_template('index.html', val = ritorno)
-    else:
-        #request.method == 'GET':
-        return render_template('index.html')
+
+
+
 
 
 

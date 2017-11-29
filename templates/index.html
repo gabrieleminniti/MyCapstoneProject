@@ -100,14 +100,26 @@
                         </form>
                <!--<a type= 'submit' href="#services" class="btn btn-dark btn-lg js-scroll-trigger" >  Recognize</a> -->
                </body>
-               
-               
-        
-                <form name='Recognize' method='POST'>
-                   <input type="submit" value="Recognize Button" class="submitButton"/>
-                   <dialog open> {{val}}</dialog>
-               </form>
             
+            <form id='take_data' method='post' action='/' > <!-- action is the URL you want to move to next-->
+                <p>
+                Class: <input type='text' name='class_obj' />
+                </p>
+                <p>
+                # Video: <input type='text' name='num_vid' />
+                </p>
+                <p>
+                # Frame: <input type='text' name='num_frame' />
+                </p>
+                
+            <p>
+                   <input type="submit" value="Recognize Button" class="submitButton"/>
+            </p>
+            
+                   </form>
+            <form>
+                   <dialog open> {{val}}</dialog>
+            </form>
           </div>
           <!-- /.row (nested) -->
           </div>

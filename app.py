@@ -32,26 +32,26 @@ def index():
         app.b = request.form['num_vid'] #per ora c'è solo un video
         app.cc = request.form['num_frame'] #qesto ci interessa
         
-        #encoding
+        #decoding
         a = app.a.decode('ascii','ignore').lower() #stringa
-        b = app.b.decode('ascii', 'ignore')
-        c = app.c.decode('ascii', 'ignore')
+        b = app.b
+        c = app.c
         
-        bor_path = '/data/data_bor/'
-        duf_path = '/data/data_bor/'
-        ther_path = '/data/data_bor/'
+        bor_path = 'data/data_bor/'
+        duf_path = 'data/data_bor/'
+        ther_path = 'data/data_bor/'
         
         n_video = int(b)  #es = 1
         n_frame = int(c)
         
         if a[0:3] =='bor':
-            open_data = 'bor_' , n_video
+            dest_path = bor_path + 'bor_' + str(n_video) + '.pkd'
         elif a[0:3] == 'duf':
-            open_data = 'duf_' , n_video
+            dest_path = duf_path + 'duf_' + str(n_video) + '.pkd'
         elif a[0:3] == 'the':
-            open_data = 'ther_', n_video
+            dest_path = ther_path + 'ther_'+ str(n_video) + '.pkd'
 
-        nuovo_diz = dill.load(open(bor_path + open_data, 'r'))
+        nuovo_diz = dill.load(open(dest_path, 'r'))
         
         ritorno = nuovo_diz[n_frame]
         return render_template('index.html', val = ritorno)

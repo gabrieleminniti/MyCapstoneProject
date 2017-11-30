@@ -30,7 +30,7 @@ def index():
         #prendiamo da utente
         app.a = request.form['class_obj']
         app.b = request.form['num_vid'] #per ora c'è solo un video
-        app.cc = request.form['num_frame'] #qesto ci interessa
+        app.c = request.form['num_frame'] #qesto ci interessa
         
         #decoding
         a = app.a.decode('ascii','ignore').lower() #stringa
@@ -38,8 +38,8 @@ def index():
         c = app.c
         
         bor_path = 'data/data_bor/'
-        duf_path = 'data/data_bor/'
-        ther_path = 'data/data_bor/'
+        duf_path = 'data/data_duf/'
+        ther_path = 'data/data_ther/'
         
         n_video = int(b)  #es = 1
         n_frame = int(c)
@@ -54,6 +54,7 @@ def index():
         nuovo_diz = dill.load(open(dest_path, 'r'))
         
         ritorno = nuovo_diz[n_frame]
+
         return render_template('index.html', val = ritorno)
 
 

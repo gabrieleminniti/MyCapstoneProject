@@ -42,7 +42,10 @@ def index():
         ther_path = 'data/data_ther/'
         
         n_video = int(b)  #es = 1
-        n_frame = int(c)
+        temp = float(c)
+        minuti = int(temp)
+        secondi = (temp-minuti) * 100
+        t = int((minuti * 60) + secondi)
         
         if a[0:3] =='bor':
             dest_path = bor_path + 'bor_' + str(n_video) + '.pkd'
@@ -53,8 +56,7 @@ def index():
 
         nuovo_diz = dill.load(open(dest_path, 'r'))
         
-        ritorno = nuovo_diz[n_frame]
-
+        ritorno = nuovo_diz[t]
         return render_template('index.html', val = ritorno)
 
 

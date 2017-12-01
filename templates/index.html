@@ -7,9 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
-        
-        
-
+    
+   
     <title>MyCapstoneProject</title>
 
     <!-- Bootstrap Core CSS -->
@@ -64,6 +63,7 @@
     </header>
 
     <!-- Services -->
+    
     <section id="services" class="services bg-primary text-white">
       <div class="container">
         <div class="row text-center">
@@ -71,56 +71,74 @@
             <h2>Recognize</h2>
             
             <head>
-                <title>Youtube playlist search</title>
+                <title>Select a video that you wanna recognize</title>
                 
             </head>
             
             
+           <style>
+               
+           img {
+           border: 1px solid #ddd; /* Gray border */
+           border-radius: 4px;  /* Rounded border */
+           padding: 5px; /* Some padding */
+           width: 150px; /* Set a small width */
+           }
+           
+           /* Add a hover effect (blue shadow) */
+           img:hover {
+           box-shadow: 0 0 2px 1px rgba(0, 140, 186, 0.5);
+           }
+           </style>
+            
+
+            <!--
+             
             <body>
-                
-                <script type="text/javascript">
-                    
-                    function go_get(){
-                        var base_url = 'http://www.youtube.com/embed?listType=search&list=';
-                        var search_field = document.getElementById('yourtextfield').value;
-                        var target_url = base_url + search_field;
-                        var ifr = document.getElementById('youriframe');
-                        ifr.src = target_url;
-                        return false;
-                                    }
-                
-                    </script> 
-                
-                <form onsubmit="go_get(); return false;" >
-                    <input type="text"  id="yourtextfield"/>
-                    <input type="submit" value="Search Playlists" />  
-                </form>
-                <iframe id="youriframe" width="800" height="540" ></iframe>
-                    <form name = 'riconosci', method = 'POST'>
-                        </form>
-               <!--<a type= 'submit' href="#services" class="btn btn-dark btn-lg js-scroll-trigger" >  Recognize</a> -->
-               </body>
+                <div class="dropdown">
+                    <a data-toggle="dropdown" href="#" class="btn btn-primary">Scegli un Video</a>
+                    <ul class="dropdown-menu">
+                        <li class="dropdown-header">Borealis</li>
+                        <li><a href="primo_video" action='primo_video' >Video  #1</a></li>
+                        <li><a href="#" action='next_gabri'>Video #2</a></li>
+                        <li><a href="#"action='next_gabri'>Video #3</a></li>
+                        <li class="divider"></li>
+                        <li class="dropdown-header">Duffel</li>
+                        <li><a href="#"action='next_gabri'>Video #1</a></li>
+                        <li><a href="#"action='next_gabri'>Video #2</a></li>
+                        <li><a href="#"action='next_gabri'>Video #3</a></li>
+                        <li class="divider"></li>
+                        <li class="dropdown-header">Thermoball</li>
+                        <li><a href="#"action='next_gabri'>Video #1</a></li>
+                        <li><a href="#"action='next_gabri'>Video #2</a></li>
+                        <li><a href="#"action='next_gabri'>Video #3</a></li>
+                    </ul>
+                </div>
+            </body>
+        </div>
+          
+             -->
             
-            <form id='take_data' method='post' action='/' > <!-- action is the URL you want to move to next-->
-                <p>
-                Class: <input type='text' name='class_obj' />
-                </p>
-                <p>
-                # Video: <input type='text' name='num_vid' />
-                </p>
-                <p>
-                Minuto: <input type='text' name='num_frame' />
-                </p>
-                
-            <p>
-                   <input type="submit" value="Recognize Button" class="submitButton"/>
-            </p>
             
-                   </form>
-            <form>
-                   <dialog open> {{val}}</dialog>
-            </form>
-          </div>
+          <p>
+          <a action="primo_video" href="primo_video">
+              <img src="static/img/imm_3.jpg" alt="Gullich">
+          </a>
+          </p>
+
+         <p>
+        <a action="primo_video" href="primo_video">
+            <img src="static/img/imm_3.jpg" alt="Gullich">
+                </a>
+        </p>
+        
+        <p>
+        <a action="primo_video" href="primo_video">
+            <img src="static/img/imm_3.jpg" alt="Gullich">
+                </a>
+        </p>
+
+
           <!-- /.row (nested) -->
           </div>
           <!-- /.col-lg-10 -->

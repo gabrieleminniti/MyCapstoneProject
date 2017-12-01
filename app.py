@@ -1,5 +1,5 @@
 # coding=utf-8
-from flask import Flask,render_template,request
+from flask import Flask,render_template,request, redirect
 import keras
 from keras.models import load_model
 import numpy as np
@@ -24,8 +24,8 @@ def index():
         
         ## per far passare un po di tempo facciamo caricare il modello nonostante non lo utilizzeremo
         
-        softmax = load_model('ULTIMO_MODELLO_V3.h5')
-        softmax.load_weights('ULTIMO_MODELLO_V3_pesi.h5')
+        #softmax = load_model('ULTIMO_MODELLO_V3.h5')
+        #softmax.load_weights('ULTIMO_MODELLO_V3_pesi.h5')
         
         #prendiamo da utente
         app.a = request.form['class_obj']
@@ -61,7 +61,15 @@ def index():
 
 
 
-
+@app.route('/primo_video',methods=['GET','POST'])
+def next_gabri_1():#can't have two functions with the same name
+    if request.method == 'GET':
+        return render_template('primo_video.html', num = '')
+    else:
+        # method = POST
+        nuovo_diz = dill.load(open('data/data_duf/duf_2.pkd' ,'r'))
+        ritorno = nuovo_diz[9]
+        return render_template('primo_video.html', num = ritorno)
 
 
 

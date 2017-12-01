@@ -36,12 +36,13 @@
                         <h2>Recognize</h2>
                         
                         <div class=page>
-                            <h1>Question #{{num}}</h1>
+                            <h1>What are you Looking?
+                                --->{{num}}<--- </h1>
                             
                             <div class=metanav>
                                 
                                 <iframe width="800" height="550"
-                                    src="https://www.youtube.com/embed/XGSy3_Czz8k?autoplay=1">
+                                    src="https://www.youtube.com/embed/LA8Ppk0NQB4">
                                 </iframe>
                                 
                             </div>
@@ -49,6 +50,8 @@
                         
                         
                         <form id='userinfoform_lulu' method='post' action='primo_video' >
+                            
+                            <!-- DA AGGIUNGERE POI CON SLIDER
                             <input type="range" list="tickmarks">
                                 
                                 <datalist id="tickmarks">
@@ -64,11 +67,27 @@
                             <option value="90">
                             <option value="100" label="100%">
                                 </datalist>
+                            -->
                             
-                            <p>
-                            <input type='submit' value='Riconosci' /> <!-- value is the text that will appear on the button. -->
-                            </p>
-                       </form>
+                            <form action="/action_page.php">
+                                Which second do you wanna:
+                                <input type="text" name="sec" value=""><br>
+                                   
+                                   <br>
+                                    </br>
+                                    
+                                    <p>
+                                    <input type='submit' value='Riconosci' /> <!-- value is the text that will appear on the button. -->
+                                    </p>
+                                    
+                                    <br>
+                                    <input action="action" onclick="window.history.go(-1); return false;" type="button" value="Back" />
+                                    </br>
+                                    
+                            </form>
+
+                            
+                        </form>
                         
                     </div>
                 </div>

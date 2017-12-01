@@ -67,8 +67,17 @@ def next_gabri_1():#can't have two functions with the same name
         return render_template('primo_video.html', num = '')
     else:
         # method = POST
-        nuovo_diz = dill.load(open('data/data_duf/duf_2.pkd' ,'r'))
-        ritorno = nuovo_diz[9]
+        app.a = request.form['sec']
+        a = app.a.encode('ascii','ignore').lower()
+        if a != '':
+            temp = float(a)
+            minuti = int(temp)
+            secondi = (temp-minuti) * 100
+            t = int((minuti * 60) + secondi)
+            nuovo_diz = dill.load(open('data/data_duf/duf_2.pkd' ,'r'))
+            ritorno = nuovo_diz[t]
+        else:
+            ritorno =  'something wrong'
         return render_template('primo_video.html', num = ritorno)
 
 

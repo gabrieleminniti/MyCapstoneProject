@@ -60,7 +60,7 @@ def index():
         return render_template('index.html', val = ritorno)
 
 
-
+# video duffel_1
 @app.route('/primo_video',methods=['GET','POST'])
 def next_gabri_1():#can't have two functions with the same name
     if request.method == 'GET':
@@ -80,6 +80,7 @@ def next_gabri_1():#can't have two functions with the same name
             ritorno =  'insert something'
         return render_template('primo_video.html', num = ritorno)
 
+#video thermoball_1
 @app.route('/secondo_video',methods=['GET','POST'])
 def next_gabri_2():#can't have two functions with the same name
     if request.method == 'GET':
@@ -99,6 +100,7 @@ def next_gabri_2():#can't have two functions with the same name
             ritorno =  'insert something'
         return render_template('secondo_video.html', num = ritorno)
 
+#video borealis_1
 @app.route('/terzo_video',methods=['GET','POST'])
 def next_gabri_3():#can't have two functions with the same name
     if request.method == 'GET':
@@ -118,7 +120,7 @@ def next_gabri_3():#can't have two functions with the same name
             ritorno =  'insert something'
         return render_template('terzo_video.html', num = ritorno)
 
-
+#video borealis_2
 @app.route('/quarto_video',methods=['GET','POST'])
 def next_gabri_4():#can't have two functions with the same name
     if request.method == 'GET':
@@ -138,6 +140,7 @@ def next_gabri_4():#can't have two functions with the same name
             ritorno =  'insert something'
         return render_template('quarto_video.html', num = ritorno)
 
+#video duffel_2
 @app.route('/quinto_video',methods=['GET','POST'])
 def next_gabri_5():#can't have two functions with the same name
     if request.method == 'GET':
@@ -157,6 +160,25 @@ def next_gabri_5():#can't have two functions with the same name
             ritorno =  'insert something'
         return render_template('quinto_video.html', num = ritorno)
 
+#video thermoball_2
+@app.route('/sesto_video',methods=['GET','POST'])
+def next_gabri_6():#can't have two functions with the same name
+    if request.method == 'GET':
+        return render_template('sesto_video.html', num = '')
+    else:
+        # method = POST
+        app.a = request.form['sec']
+        a = app.a.encode('ascii','ignore').lower()
+        if a != '':
+            temp = float(a)
+            minuti = int(temp)
+            secondi = (temp-minuti) * 100
+            t = int((minuti * 60) + secondi)
+            nuovo_diz = dill.load(open('data/data_ther/ther_5.pkd' ,'r'))
+            ritorno = nuovo_diz[t]
+        else:
+            ritorno =  'insert something'
+        return render_template('sesto_video.html', num = ritorno)
 
 
 if __name__ == "__main__":

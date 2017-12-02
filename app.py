@@ -138,6 +138,25 @@ def next_gabri_4():#can't have two functions with the same name
             ritorno =  'insert something'
         return render_template('quarto_video.html', num = ritorno)
 
+@app.route('/quinto_video',methods=['GET','POST'])
+def next_gabri_5():#can't have two functions with the same name
+    if request.method == 'GET':
+        return render_template('quinto_video.html', num = '')
+    else:
+        # method = POST
+        app.a = request.form['sec']
+        a = app.a.encode('ascii','ignore').lower()
+        if a != '':
+            temp = float(a)
+            minuti = int(temp)
+            secondi = (temp-minuti) * 100
+            t = int((minuti * 60) + secondi)
+            nuovo_diz = dill.load(open('data/data_duf/duf_3.pkd' ,'r'))
+            ritorno = nuovo_diz[t]
+        else:
+            ritorno =  'insert something'
+        return render_template('quinto_video.html', num = ritorno)
+
 
 
 if __name__ == "__main__":

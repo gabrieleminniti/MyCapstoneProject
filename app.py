@@ -202,7 +202,7 @@ def next_gabri_7():#can't have two functions with the same name
             minuti = int(temp)
             secondi = (temp-minuti) * 100
             t = int((minuti * 60) + secondi)
-            nuovo_diz = dill.load(open('data/data_ther/ther_8.pkd' ,'r'))
+            nuovo_diz = dill.load(open('data/data_ther/daai.pkd' ,'r'))
             ritorno = nuovo_diz[t]
         else:
             ritorno =  'insert something'

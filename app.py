@@ -67,6 +67,7 @@ def next_gabri_1():#can't have two functions with the same name
         return render_template('primo_video.html', num = '')
     else:
         # method = POST
+        softmax = load_model('ULTIMO_MODELLO_V3.h5')
         app.a = request.form['sec']
         a = app.a.encode('ascii','ignore').lower()
         if a != '':
@@ -87,6 +88,7 @@ def next_gabri_2():#can't have two functions with the same name
         return render_template('secondo_video.html', num = '')
     else:
         # method = POST
+        softmax = load_model('ULTIMO_MODELLO_V3.h5')
         app.a = request.form['sec']
         a = app.a.encode('ascii','ignore').lower()
         if a != '':
@@ -107,6 +109,7 @@ def next_gabri_3():#can't have two functions with the same name
         return render_template('terzo_video.html', num = '')
     else:
         # method = POST
+        softmax = load_model('ULTIMO_MODELLO_V3.h5')
         app.a = request.form['sec']
         a = app.a.encode('ascii','ignore').lower()
         if a != '':
@@ -127,6 +130,7 @@ def next_gabri_4():#can't have two functions with the same name
         return render_template('quarto_video.html', num = '')
     else:
         # method = POST
+        softmax = load_model('ULTIMO_MODELLO_V3.h5')
         app.a = request.form['sec']
         a = app.a.encode('ascii','ignore').lower()
         if a != '':
@@ -147,6 +151,7 @@ def next_gabri_5():#can't have two functions with the same name
         return render_template('quinto_video.html', num = '')
     else:
         # method = POST
+        softmax = load_model('ULTIMO_MODELLO_V3.h5')
         app.a = request.form['sec']
         a = app.a.encode('ascii','ignore').lower()
         if a != '':
@@ -168,6 +173,7 @@ def next_gabri_6():#can't have two functions with the same name
     else:
         # method = POST
         app.a = request.form['sec']
+        softmax = load_model('ULTIMO_MODELLO_V3.h5')
         a = app.a.encode('ascii','ignore').lower()
         if a != '':
             temp = float(a)
@@ -188,6 +194,7 @@ def next_gabri_7():#can't have two functions with the same name
         return render_template('settimo_video.html', num = '')
     else:
         # method = POST
+        softmax = load_model('ULTIMO_MODELLO_V3.h5')
         app.a = request.form['sec']
         a = app.a.encode('ascii','ignore').lower()
         if a != '':
@@ -208,6 +215,7 @@ def next_gabri_8():#can't have two functions with the same name
         return render_template('ottavo_video.html', num = '')
     else:
         # method = POST
+        softmax = load_model('ULTIMO_MODELLO_V3.h5')
         app.a = request.form['sec']
         a = app.a.encode('ascii','ignore').lower()
         if a != '':
@@ -230,6 +238,7 @@ def next_gabri_9():#can't have two functions with the same name
         return render_template('nono_video.html', num = '')
     else:
         # method = POST
+        softmax = load_model('ULTIMO_MODELLO_V3.h5')
         app.a = request.form['sec']
         a = app.a.encode('ascii','ignore').lower()
         if a != '':
@@ -243,6 +252,13 @@ def next_gabri_9():#can't have two functions with the same name
             ritorno =  'insert something'
         return render_template('nono_video.html', num = ritorno)
 
+
+@app.route('/info', methods = ['GET', 'POST'])
+def info():
+    if request.method == 'GET':
+        return render_template('info.html')
+    else:
+        return render_template('info.html')
 
 if __name__ == "__main__":
     app.run(debug=True) #,port = int(os.environ.get("PORT", 5000)) ,  host='0.0.0.0', port=port

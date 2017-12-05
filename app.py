@@ -71,13 +71,16 @@ def next_gabri_1():#can't have two functions with the same name
         softmax = load_model('ULTIMO_MODELLO_V3.h5')
         app.a = request.form['sec']
         a = app.a.encode('ascii','ignore').lower()
+        match = re.findall(r'[0-9]', a) #sistemare  qui
+        uno = match[1]
         if a != '':
             temp = float(a)
             minuti = int(temp)
             secondi = (temp-minuti) * 100
             t = int((minuti * 60) + secondi)
             nuovo_diz = dill.load(open('data/data_duf/duf_2.pkd' ,'r'))
-            ritorno = nuovo_diz[t]
+        #ritorno = nuovo_diz[t]
+            ritorno = uno
         else:
             ritorno =  'insert something'
         return render_template('primo_video.html', num = ritorno)

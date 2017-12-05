@@ -36,8 +36,8 @@
                         <h2>Recognize</h2>
                         
                         <div class=page>
-                            <h1>What are you Looking?
-                                --->{{num}}<--- </h1>
+                            <h1>Let's play the video and select a moment
+                            </h1>
                             
                             <div class=metanav>
                                 
@@ -70,7 +70,7 @@
                             -->
                             
                             <form action="/action_page.php">
-                                Which second do you wanna:
+                                Which second do you wanna recognize:
                                 <input type="text" name="sec" value=""><br>
                                    
                                    <br>
@@ -79,11 +79,15 @@
                                     <p>
                                     <input type='submit' value='Riconosci' /> <!-- value is the text that will appear on the button. -->
                                     </p>
-                                    
-                                    <br>
-                                    <input action="action" onclick="window.history.go(-1); return false;" type="button" value="Back" />
-                                    </br>
-                                    
+                                    <h2>
+                                        <p> What appear in the video at the selected moment?</p>
+                                        <p> {{num}}</p>
+                                    </h2>
+                                    <b>
+                                        
+                                        <form method = "GET" action = "http://prova-mille.herokuapp.com" >
+                                            <button type = "submit"> Home Page </button> </form>
+                                    </b>
                             </form>
 
                             

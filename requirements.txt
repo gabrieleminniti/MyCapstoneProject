@@ -10,4 +10,3 @@ tensorflow
 h5py
 pyscreenshot 
 dill
-re

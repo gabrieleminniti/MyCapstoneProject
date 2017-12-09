@@ -336,7 +336,7 @@ def next_gabri_9():#can't have two functions with the same name
                     if idx >= 522:
                         ritorno = 'insert a valid moment'
                     else:
-                        nuovo_diz = dill.load(open('data/data_bor/duf_4.pkd' ,'r'))
+                        nuovo_diz = dill.load(open('data/data_duf/duf_4.pkd' ,'r'))
                         ritorno = nuovo_diz[idx]
         else:
             ritorno = 'you fail to insert the moment that you wanna recognize'

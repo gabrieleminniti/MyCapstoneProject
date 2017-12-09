@@ -3,25 +3,26 @@
     
     <head>
         
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="">
+        <meta charset="utf-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+                <meta name="description" content="">
+                    <meta name="author" content="">
                         
                         
-    <title>MyCapstoneProject</title>
+                        <title>MyCapstoneProject</title>
                         
-        <!-- Bootstrap Core CSS -->
-        <link href="static/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+                        <!-- Bootstrap Core CSS -->
+                        <link href="static/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
                             
-        <!-- Custom Fonts -->
-            <link href="static/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-                <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
+                            <!-- Custom Fonts -->
+                            <link href="static/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+                                <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
                                     
-        <!-- Custom CSS -->
-        <link href="static/css/stylish-portfolio.css" rel="stylesheet">
+                                    <!-- Custom CSS -->
+                                    <link href="static/css/stylish-portfolio.css" rel="stylesheet">
                                         
-        </head>
+                                        
+                                        </head>
     
     
     <body>
@@ -33,11 +34,11 @@
             <div class="container">
                 <div class="row text-center">
                     <div class="col-lg-10 mx-auto">
-                        <h2>Recognize</h2>
+                        <h1>Recognition</h1>
                         
                         <div class=page>
-                            <h1>Let's play the video and select a moment
-                            </h1>
+                            <h3>Let's play the video and select a moment specific moment on the You Tube's player time-bar
+                            </h3>
                             
                             <div class=metanav>
                                 
@@ -52,45 +53,59 @@
                         <form id='userinfoform_lulu' method='post' action='settimo_video' >
                             
                             <!-- DA AGGIUNGERE POI CON SLIDER
-                            <input type="range" list="tickmarks">
-                                
-                                <datalist id="tickmarks">
-                            <option value="0" label="0%">
-                            <option value="10">
-                            <option value="20">
-                            <option value="30">
-                            <option value="40">
-                            <option value="50" label="50%">
-                            <option value="60">
-                            <option value="70">
-                            <option value="80">
-                            <option value="90">
-                            <option value="100" label="100%">
-                                </datalist>
-                            -->
+                             <input type="range" list="tickmarks">
+                             
+                             <datalist id="tickmarks">
+                             <option value="0" label="0%">
+                             <option value="10">
+                             <option value="20">
+                             <option value="30">
+                             <option value="40">
+                             <option value="50" label="50%">
+                             <option value="60">
+                             <option value="70">
+                             <option value="80">
+                             <option value="90">
+                             <option value="100" label="100%">
+                             </datalist>
+                             -->
                             
                             <form action="/action_page.php">
-                                Which second do you wanna recognize:
-                                <input type="text" name="sec" value=""><br>
-                                   
-                                   <br>
+                                In witch minute is your frame?
+                                <input type="text" name="sec" value="e.g. 1.23"><br>
+                                    
+                                    <br>
+                                    
                                     </br>
                                     
                                     <p>
-                                    <input type='submit' value='Riconosci' /> <!-- value is the text that will appear on the button. -->
+                                    <input type="submit" class= "btn btn-dark" value='Riconosci' /> <!-- value is the text that will appear on the button. -->
                                     </p>
+                                    
+                                    
+                                    
                                     <h2>
-                                        <p> What appear in the video at the selected moment?</p>
-                                        <p> {{num}}</p>
+                                        <p> What appears in the video at the selected moment?</p>
+                                        
+                                        <p> &#x2554; &#9552; &#9552; &#9552; &#9552; &#9552; &#9552; &#9559; </p>
+                                        <p>&#9553; <font size = "7" face="verdana" color="red">{{num}}</font> &#9553;</p>
+                                        <p> &#9562; &#9552; &#9552; &#9552; &#9552; &#9552; &#9552; &#9565;</p>
                                     </h2>
+                                    <br> </br>
+                                    <br> </br>
+                                    <br> </br>
+                                    
+                                    
                                     <b>
                                         
-                                        <form method = "GET" action = "http://prova-mille.herokuapp.com" >
-                                            <button type = "submit"> Home Page </button> </form>
+                                        
+                                        
+                                        
+                                        <a  class= "btn btn-dark"  href="#" onclick="history.go(-2)">Go Back</a>
                                     </b>
-
-                            </form>
-
+                                    
+                                    </form>
+                            
                             
                         </form>
                         
@@ -98,10 +113,10 @@
                 </div>
             </div>
         </section>
-                        
-     
-         
-         <!-- Footer -->
+        
+        
+        
+        <!-- Footer -->
         <footer>
             <section id="contact" >
                 <div class="container">
@@ -112,27 +127,28 @@
                             </h4>
                             <li>
                                 <i class="fa fa-envelope-o fa-fw"></i>
-                                <a href="gabriele.minniti2@gmail.com">gabriele.minniti2@gmail.com</a>
+                                <a>gabriele.minniti2@gmail.com</a>
                             </li>
                             </ul>
                             <br>
-                            <ul class="list-inline">
-                                <li class="list-inline-item">
-                                    <a href="#">
-                                        <i class="fa fa-facebook fa-fw fa-3x"></i>
-                                    </a>
-                                </li>
-                                <li class="list-inline-item">
-                                    <a href="#">
-                                        <i class="fa fa-twitter fa-fw fa-3x"></i>
-                                    </a>
-                                </li>
-                                <li class="list-inline-item">
-                                    <a href="#">
-                                        <i class="fa fa-dribbble fa-fw fa-3x"></i>
-                                    </a>
-                                </li>
-                            </ul>
+                            <!--
+                             <ul class="list-inline">
+                             <li class="list-inline-item">
+                             <a href="#">
+                             <i class="fa fa-facebook fa-fw fa-3x"></i>
+                             </a>
+                             </li>
+                             <li class="list-inline-item">
+                             <a href="#">
+                             <i class="fa fa-twitter fa-fw fa-3x"></i>
+                             </a>
+                             </li>
+                             <li class="list-inline-item">
+                             <a href="#">
+                             <i class="fa fa-dribbble fa-fw fa-3x"></i>
+                             </a>
+                             </li>
+                             </ul> -->
                             <hr class="small">
                             <p class="text-muted">Copyright &copy; Your Website 2017</p>
                         </div>
